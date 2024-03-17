@@ -20,6 +20,11 @@ pack() {
         echo "Error: monkeos.iso not found in src directory."
         exit 1
     fi
+    echo "Clean before next build? (y/n)"
+    read -r answer
+    if [[ $answer =~ ^[Yy]$ ]]; then
+        clean
+    fi
 }
 
 run() {

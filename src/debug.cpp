@@ -1,7 +1,5 @@
 #pragma once
 #include <string.h>
-#include <stdint.h>
-#include <stddef.h>
 #include "port.cpp"
 
 void WriteCharDebug(char chr) {
