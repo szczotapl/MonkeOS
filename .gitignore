@@ -1,6 +1,6 @@
 *.img
 *.elf
 *.o
-iso/*
 .vscode/*
 blackneeed-compile.sh
+src/iso/*
