@@ -4,3 +4,4 @@
 iso/*
 .vscode/*
 blackneeed-compile.sh
+*.tar.bz2
