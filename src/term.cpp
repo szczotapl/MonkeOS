@@ -1,8 +1,8 @@
 #pragma once
 
-#include <cstdint>
-#include <cstddef>
-#include <cstring>
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
 
 enum class VGAColor : uint8_t {
     Black = 0,
@@ -38,8 +38,7 @@ const size_t VGA_ROWS = 25;
 
 size_t termRow = 0;
 size_t termColumn = 0;
-uint8_t defaultColor = makeColor(VGAColor::LightGrey, VGAColor::Black);
-uint16_t* termBuffer = (uint16_t*)0xb8000;
+uint8_t defaultColor;
 
 void termClearScreen(uint8_t color = defaultColor) {
     for (uint16_t pos = 0; pos < VGA_ROWS * VGA_COLS; pos++) {
