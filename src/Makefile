@@ -16,4 +16,4 @@ clean:
 	rm -f *.o '$(MULTIBOOT)' '$(MAIN)'
 
 run: $(MAIN)
-	qemu-system-i386 -cdrom '$(MAIN)'
+	qemu-system-i386 -cdrom '$(MAIN)' -debugcon file:/dev/stdout -boot d -d guest_errors,cpu_reset -monitor stdio

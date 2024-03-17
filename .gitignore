@@ -3,3 +3,4 @@
 *.o
 iso/*
 .vscode/*
+blackneeed-compile.sh

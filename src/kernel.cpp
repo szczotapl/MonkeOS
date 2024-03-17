@@ -1,7 +1,9 @@
 #include "term.cpp"
+#include "debug.cpp"
 
 extern "C" void kernel_main() {
     termInitialize();
+    PrintlnDebug("Debug test!");
     termWriteLine("         .-\"-.");
     termWriteLine("       _/.-.-.\\_");
     termWriteLine("      ( ( o o ) )");
