@@ -1,4 +1,5 @@
 #pragma once
+#include <stdint.h>
 
 enum class VGAColor : uint8_t {
     Black = 0,

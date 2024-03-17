@@ -1,4 +1,5 @@
 #pragma once
+#include <string.h>
 
 #define ANSI_BLACK_FG "\033[30m"
 #define ANSI_RED_FG "\033[31m"
