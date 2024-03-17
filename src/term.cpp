@@ -48,6 +48,7 @@ void termClearScreen(uint8_t color = defaultColor) {
 }
 
 void termInitialize() {
+    defaultColor = makeColor(VGAColor::LightGrey, VGAColor::Black);
     termClearScreen(defaultColor);
 }
 
