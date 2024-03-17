@@ -3,7 +3,7 @@
 
 extern "C" void kernel_main() {
     termInitialize();
-    PrintlnDebug("Debug test!", ANSI_WHITE_FG, ANSI_BLACK_BG);
+    PrintlnDebug("Debug test!", ANSI_YELLOW_FG, ANSI_BLACK_BG);
     termWriteLine("         .-\"-.");
     termWriteLine("       _/.-.-.\\_");
     termWriteLine("      ( ( o o ) )");
