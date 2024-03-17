@@ -39,7 +39,6 @@ const size_t VGA_ROWS = 25;
 size_t termRow = 0;
 size_t termColumn = 0;
 uint8_t defaultColor;
-uint16_t* termBuffer = (uint16_t*)0xb8000;
 
 void termClearScreen(uint8_t color = defaultColor) {
     for (uint16_t pos = 0; pos < VGA_ROWS * VGA_COLS; pos++) {
