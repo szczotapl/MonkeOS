@@ -1,6 +1,3 @@
-#include <stdint.h>
-#include <stddef.h>
-#include <string.h>
 #include "term.cpp"
 
 extern "C" void kernel_main() {

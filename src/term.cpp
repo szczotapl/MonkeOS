@@ -30,7 +30,7 @@ uint8_t makeColor(VGAColor fg, VGAColor bg) {
 uint16_t makeVGAEntry(char c, uint8_t color) {
     uint16_t c16 = c;
     uint16_t color16 = color;
-    return c16 | color16 << 8;
+    return c16 | static_cast<uint16_t>(color16) << 8;
 }
 
 const size_t VGA_COLS = 80;
@@ -39,10 +39,10 @@ const size_t VGA_ROWS = 25;
 size_t termRow = 0;
 size_t termColumn = 0;
 uint8_t defaultColor;
-uint16_t* termBuffer = (uint16_t)0xb8000;
+uint16_t* termBuffer = reinterpret_cast<uint16_t*>(0xb8000);
 
 void termClearScreen(uint8_t color = defaultColor) {
-    for (uint16_t pos = 0; pos < VGA_ROWS VGA_COLS; pos++) {
+    for (size_t pos = 0; pos < VGA_ROWS * VGA_COLS; pos++) {
         termBuffer[pos] = makeVGAEntry(' ', color);
     }
 }
@@ -75,9 +75,9 @@ void termPutChar(char c, uint8_t color = defaultColor) {
         if (++termColumn == VGA_COLS) {
             termColumn = 0;
             if (++termRow == VGA_ROWS) {
-                    termRow = 0;
-                }
+                termRow = 0;
             }
+        }
     }
 }
 
