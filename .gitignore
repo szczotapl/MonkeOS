@@ -2,7 +2,8 @@
 *.elf
 *.o
 .vscode/*
-blackneeed-compile.sh
+# blackneeed-compile.sh
 src/iso/*
 iso/*
 *.tar.bz2
+*.iso
