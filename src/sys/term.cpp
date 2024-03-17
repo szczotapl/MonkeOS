@@ -66,6 +66,8 @@ void termPutChar(char c, uint8_t color = defaultColor) {
     } else if (c == '\t') {
         for (int i = 0; i < TAB_SPACES; i++)
             termPutChar(' ', color);
+    } else if (c == '\r') {
+        termColumn = 0;
     } else {
         const size_t index = termRow * VGA_COLS + termColumn;
         termBuffer[index] = makeVGAEntry(c, color);
