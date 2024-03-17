@@ -1,7 +1,7 @@
 #include "sys/term.cpp"
 #include "sys/debug.cpp"
 #include "sys/ANSIColor.hpp"
-#include "sys/config.h"
+#include "sys/config.hpp"
 
 extern "C" void kernel_main() {
     termInitialize();
