@@ -3,3 +3,4 @@
 ![top language](https://img.shields.io/github/languages/top/riviox/MonkeOS)
 ## an attempt to create OS in C++ and ASM 
 ## (Make pr) (im dumb) (help)
+![Alt text](ss.png)
