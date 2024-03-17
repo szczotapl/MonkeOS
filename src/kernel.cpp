@@ -91,6 +91,21 @@ void writeLine(const char* data) {
     write("\n");
 }
 
+void writeError(const char* message) {
+    write("[ Error ] ");
+    writeLine(message);
+}
+
+void writeInfo(const char* message) {
+    write("[ Info ] ");
+    writeLine(message);
+}
+
+void writeWarn(const char* message) {
+    write("[ Warning ] ");
+    writeLine(message);
+}
+
 extern "C" void kernel_main() {
     termInitialize();
     writeLine("         .-\"-.");
@@ -102,5 +117,5 @@ extern "C" void kernel_main() {
     writeLine("       /  /|\\  \\");
     writeLine("      ( (/ T \\) )");
     writeLine("         \\__/^\\__/");
-    writeLine("Booted MonkeOS");
+    writeInfo("Booted MonkeOS!");
 }
