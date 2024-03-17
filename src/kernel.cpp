@@ -6,6 +6,7 @@
 extern "C" void kernel_main() {
     termInitialize();
     PrintlnDebug("Booted MonkeOS.", ANSI_GREEN_FG, ANSI_BLACK_BG);
+    PrintlnDebug("Poland Strong!!!", ANSI_WHITE_FG, ANSI_RED_BG);
     termWriteLine("         .-\"-.");
     termWriteLine("       _/.-.-.\\_");
     termWriteLine("      ( ( o o ) )");
@@ -17,4 +18,5 @@ extern "C" void kernel_main() {
     termWriteLine("         \\__/^\\__/");
     termWriteOK("Booted MonkeOS ");
     termWriteLine(monkeversion);
+    termWriteLineInfo("I love Poland\n    ~ .riviox & Blackneeed");
 }
