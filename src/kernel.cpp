@@ -16,5 +16,11 @@ extern "C" void kernel_main() {
     termWriteLine("      ( (/ T \\) )");
     termWriteLine("         \\__/^\\__/");
     termWriteOK("Booted MonkeOS ");
-    termWriteLine(monkeversion);
+    termWrite(monkeversion);
+    termWrite(" ");
+    if (monkeAlpha) {
+        termWriteLine("alpha");
+    } else if (monkeBeta) {
+        termWriteLine("beta");
+    }
 }

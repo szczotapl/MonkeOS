@@ -4,6 +4,17 @@
 #include <stddef.h>
 #include <string.h>
 #include "VGAColor.hpp"
+#include "port.cpp"
+
+#define CRT_PORT 0x3D4
+
+const size_t VGA_COLS = 80;
+const size_t VGA_ROWS = 25;
+
+size_t termRow = 0;
+size_t termColumn = 0;
+uint8_t defaultColor;
+uint16_t* termBuffer = reinterpret_cast<uint16_t*>(0xb8000);
 
 uint8_t makeColor(VGAColor fg, VGAColor bg) {
     return static_cast<uint8_t>(fg) | static_cast<uint8_t>(bg) << 4;
@@ -15,13 +26,13 @@ uint16_t makeVGAEntry(char c, uint8_t color) {
     return c16 | static_cast<uint16_t>(color16) << 8;
 }
 
-const size_t VGA_COLS = 80;
-const size_t VGA_ROWS = 25;
-
-size_t termRow = 0;
-size_t termColumn = 0;
-uint8_t defaultColor;
-uint16_t* termBuffer = reinterpret_cast<uint16_t*>(0xb8000);
+void termSetVisibleCursorPos(uint8_t x = termColumn, uint8_t y = termRow) {
+    uint16_t pos = y * VGA_COLS + x;
+    outb(CRT_PORT, 0x0F);
+    outb(CRT_PORT + 1, (uint8_t)(pos & 0xFF));
+    outb(CRT_PORT, 0x0E);
+    outb(CRT_PORT + 1, (uint8_t)((pos >> 8) & 0xFF));
+}
 
 void termClearScreen(uint8_t color = defaultColor) {
     for (size_t pos = 0; pos < VGA_ROWS * VGA_COLS; pos++) {
@@ -61,6 +72,7 @@ void termPutChar(char c, uint8_t color = defaultColor) {
             }
         }
     }
+    termSetVisibleCursorPos();
 }
 
 void termWrite(const char* data, uint8_t color = defaultColor) {
