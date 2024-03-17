@@ -8,6 +8,6 @@
 
 # To Do:
 [x] Debug
-[] Keyboard input
-[] Shell
-[] Commands
+[ ] Keyboard input
+[ ] Shell
+[ ] Commands
