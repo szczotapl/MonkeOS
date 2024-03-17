@@ -24,5 +24,5 @@ extern "C" void kernel_main() {
     } else if (monkeBeta) {
         termWriteLine("beta");
     }
-    termWriteLineInfo("I love Poland\n    ~ .riviox & Blackneeed");
+    termWriteLineInfo("I love Poland\n\t~ .riviox & Blackneeed");
 }

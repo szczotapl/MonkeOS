@@ -7,6 +7,7 @@
 #include "port.cpp"
 
 #define CRT_PORT 0x3D4
+#define TAB_SPACES 4
 
 const size_t VGA_COLS = 80;
 const size_t VGA_ROWS = 25;
@@ -62,6 +63,9 @@ void termPutChar(char c, uint8_t color = defaultColor) {
             }
             termRow = VGA_ROWS - 1;
         }
+    } else if (c == '\t') {
+        for (int i = 0; i < TAB_SPACES; i++)
+            termPutChar(' ', color);
     } else {
         const size_t index = termRow * VGA_COLS + termColumn;
         termBuffer[index] = makeVGAEntry(c, color);
