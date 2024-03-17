@@ -95,24 +95,28 @@ void write(const char* data) {
 }
 
 void writeline(const char* data) {
-    size_t datalen = strlen(data);
-    for (size_t i = 0; i < datalen; i++) {
-        term_putchar(data[i]);
-        if (data[i] == '\n') {
-            term_column = 0;
-            if (++term_row == VGA_HEIGHT) {
-                term_row = 0;
-            }
-        }
-    }
+    write(data);
+    write("\n");
 }
 
 
 #if defined(__cplusplus)
 extern "C"
 #endif
+#if defined(__cplusplus)
+extern "C"
+#endif
 void kernel_main() {
     term_initialize();
-    writeline("Booted MonkeOS\n");
+    writeline("         .-\"-.");
+    writeline("       _/.-.-.\\_");
+    writeline("      ( ( o o ) )");
+    writeline("       |/  \"  \\|    Monke Stronk");
+    writeline("        \\'/^'/'");
+    writeline("        /`\\ /`\\");
+    writeline("       /  /|\\  \\");
+    writeline("      ( (/ T \\) )");
+    writeline("         \\__/^\\__/");
+    writeline("Booted MonkeOS");
 }
 
