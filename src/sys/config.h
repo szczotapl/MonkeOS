@@ -1,0 +1,1 @@
+#define monkeversion "1.0"

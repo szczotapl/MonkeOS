@@ -1,6 +1,7 @@
 #include "sys/term.cpp"
 #include "sys/debug.cpp"
 #include "sys/ANSIColor.hpp"
+#include "sys/config.h"
 
 extern "C" void kernel_main() {
     termInitialize();
@@ -14,5 +15,5 @@ extern "C" void kernel_main() {
     termWriteLine("       /  /|\\  \\");
     termWriteLine("      ( (/ T \\) )");
     termWriteLine("         \\__/^\\__/");
-    termWriteOK("Booted MonkeOS!");
+    termWriteLineOK("Booted MonkeOS %d", monkeversion);
 }
