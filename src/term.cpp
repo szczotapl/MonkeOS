@@ -105,3 +105,8 @@ void termWriteWarn(const char* message, uint8_t color = defaultColor) {
     termWrite("[WARN] ", makeColor(VGAColor::LightBrown, VGAColor::Black));
     termWriteLine(message, color);
 }
+
+void termWriteOK(const char* message, uint8_t color = defaultColor) {
+    termWrite("[OK] ", makeColor(VGAColor::LightGreen, VGAColor::Black));
+    termWriteLine(message, color);
+}

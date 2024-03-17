@@ -3,7 +3,7 @@
 
 extern "C" void kernel_main() {
     termInitialize();
-    PrintlnDebug("Debug test!");
+    PrintlnDebug("Debug test!", ANSI_WHITE_FG, ANSI_BLACK_BG);
     termWriteLine("         .-\"-.");
     termWriteLine("       _/.-.-.\\_");
     termWriteLine("      ( ( o o ) )");
@@ -13,5 +13,5 @@ extern "C" void kernel_main() {
     termWriteLine("       /  /|\\  \\");
     termWriteLine("      ( (/ T \\) )");
     termWriteLine("         \\__/^\\__/");
-    termWriteInfo("Booted MonkeOS!");
+    termWriteOK("Booted MonkeOS!");
 }
