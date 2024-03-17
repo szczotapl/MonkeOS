@@ -15,5 +15,6 @@ extern "C" void kernel_main() {
     termWriteLine("       /  /|\\  \\");
     termWriteLine("      ( (/ T \\) )");
     termWriteLine("         \\__/^\\__/");
-    termWriteLineOK("Booted MonkeOS %d", monkeversion);
+    termWriteOK("Booted MonkeOS ");
+    termWriteLineOK(monkeversion);
 }
