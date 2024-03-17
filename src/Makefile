@@ -2,7 +2,7 @@
 
 ISODIR := iso
 MULTIBOOT := $(ISODIR)/boot/main.elf
-MAIN := main.iso
+MAIN := monkeos.iso
 
 .PHONY: clean run
 
