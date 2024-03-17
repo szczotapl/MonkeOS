@@ -1,6 +1,7 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
+#include <string.h>
 
 enum class VGAColor : uint8_t {
     Black = 0,
@@ -92,17 +93,23 @@ void writeLine(const char* data) {
 }
 
 void writeError(const char* message) {
+    termColor = makeColor(VGAColor::Red, VGAColor::Black);
     write("[ Error ] ");
+    termColor = makeColor(VGAColor::LightGrey, VGAColor::Black);
     writeLine(message);
 }
 
 void writeInfo(const char* message) {
+    termColor = makeColor(VGAColor::Cyan, VGAColor::Black);
     write("[ Info ] ");
+    termColor = makeColor(VGAColor::LightGrey, VGAColor::Black);
     writeLine(message);
 }
 
 void writeWarn(const char* message) {
+    termColor = makeColor(VGAColor::LightRed, VGAColor::Black);
     write("[ Warning ] ");
+    termColor = makeColor(VGAColor::LightGrey, VGAColor::Black);
     writeLine(message);
 }
 
@@ -118,4 +125,5 @@ extern "C" void kernel_main() {
     writeLine("      ( (/ T \\) )");
     writeLine("         \\__/^\\__/");
     writeInfo("Booted MonkeOS!");
+    writeError("Still under development");
 }
