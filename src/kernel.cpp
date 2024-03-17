@@ -126,4 +126,5 @@ extern "C" void kernel_main() {
     writeLine("         \\__/^\\__/");
     writeInfo("Booted MonkeOS!");
     writeError("Still under development");
+    writeWarn("Test warn");
 }
