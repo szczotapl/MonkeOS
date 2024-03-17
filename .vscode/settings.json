@@ -1,8 +1,0 @@
-{
-    "files.associations": {
-        "*.embeddedhtml": "html",
-        "*.ino": "arduino-output",
-        "cstring": "cpp",
-        "cstdint": "cpp"
-    }
-}
