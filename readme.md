@@ -5,3 +5,9 @@
 ## (Make pr) (im dumb) (help)
 
 ![Alt text](ss.png)
+
+# To Do:
+[x] Debug
+[ ] Keyboard input
+[ ] Shell
+[ ] Commands
