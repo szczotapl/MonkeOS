@@ -4,8 +4,8 @@
 ## an attempt to create OS in C++ and ASM 
 ## (Make pr) (im dumb) (help)
 
-![Alt text](ss.png)
-
+![Alt text](art/ss.png)
+![Alt text](art/69.png)
 # To Do:
 [x] Debug
 [ ] Keyboard input
