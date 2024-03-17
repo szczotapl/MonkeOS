@@ -1,6 +1,3 @@
 #!/bin/bash
-cd src
-make clean
-make
-make run
-cd ..
+make -C src clean
+make -C src run
