@@ -42,6 +42,6 @@ void PrintDebug(const char* string, const char* fg = ANSI_WHITE_FG, const char* 
 }
 
 void PrintlnDebug(const char* string, const char* fg = ANSI_WHITE_FG, const char* bg = ANSI_BLACK_BG) {
-    PrintDebug(string);
+    PrintDebug(string, fg, bg);
     WriteCharDebug('\n');
 }
