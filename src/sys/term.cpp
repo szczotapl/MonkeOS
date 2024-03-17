@@ -75,20 +75,40 @@ void termWriteLine(const char* data, uint8_t color = defaultColor) {
 
 void termWriteError(const char* message, uint8_t color = defaultColor) {
     termWrite("[ERR] ", makeColor(VGAColor::Red, VGAColor::Black));
-    termWriteLine(message, color);
+    termWrite(message, color);
 }
 
 void termWriteInfo(const char* message, uint8_t color = defaultColor) {
     termWrite("[INFO] ", makeColor(VGAColor::LightCyan, VGAColor::Black));
-    termWriteLine(message, color);
+    termWrite(message, color);
 }
 
 void termWriteWarn(const char* message, uint8_t color = defaultColor) {
     termWrite("[WARN] ", makeColor(VGAColor::LightBrown, VGAColor::Black));
-    termWriteLine(message, color);
+    termWrite(message, color);
 }
 
 void termWriteOK(const char* message, uint8_t color = defaultColor) {
+    termWrite("[OK] ", makeColor(VGAColor::LightGreen, VGAColor::Black));
+    termWrite(message, color);
+}
+
+void termWriteLineError(const char* message, uint8_t color = defaultColor) {
+    termWrite("[ERR] ", makeColor(VGAColor::Red, VGAColor::Black));
+    termWriteLine(message, color);
+}
+
+void termWriteLineInfo(const char* message, uint8_t color = defaultColor) {
+    termWrite("[INFO] ", makeColor(VGAColor::LightCyan, VGAColor::Black));
+    termWriteLine(message, color);
+}
+
+void termWriteLineWarn(const char* message, uint8_t color = defaultColor) {
+    termWrite("[WARN] ", makeColor(VGAColor::LightBrown, VGAColor::Black));
+    termWriteLine(message, color);
+}
+
+void termWriteLineOK(const char* message, uint8_t color = defaultColor) {
     termWrite("[OK] ", makeColor(VGAColor::LightGreen, VGAColor::Black));
     termWriteLine(message, color);
 }
