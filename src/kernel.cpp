@@ -1,5 +1,6 @@
-#include "term.cpp"
-#include "debug.cpp"
+#include "sys/term.cpp"
+#include "sys/debug.cpp"
+#include "sys/ANSIColor.hpp"
 
 extern "C" void kernel_main() {
     termInitialize();
