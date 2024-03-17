@@ -1,7 +1,6 @@
 #include <cstddef>
 #include <cstdint>
 #include <cstring>
-#include <cstdio>
 
 enum class VGAColor : uint8_t {
     Black = 0,
@@ -57,7 +56,18 @@ void termPutChar(char c) {
     if (c == '\n') {
         termColumn = 0;
         if (++termRow == VGA_HEIGHT) {
-            termRow = 0;
+            for (size_t y = 1; y < VGA_HEIGHT; y++) {
+                for (size_t x = 0; x < VGA_WIDTH; x++) {
+                    const size_t destIndex = (y - 1) * VGA_WIDTH + x;
+                    const size_t srcIndex = y * VGA_WIDTH + x;
+                    termBuffer[destIndex] = termBuffer[srcIndex];
+                }
+            }
+            for (size_t x = 0; x < VGA_WIDTH; x++) {
+                const size_t index = (VGA_HEIGHT - 1) * VGA_WIDTH + x;
+                termBuffer[index] = makeVGAEntry(' ', termColor);
+            }
+            termRow = VGA_HEIGHT - 1;
         }
     } else {
         const size_t index = termRow * VGA_WIDTH + termColumn;
@@ -65,9 +75,9 @@ void termPutChar(char c) {
         if (++termColumn == VGA_WIDTH) {
             termColumn = 0;
             if (++termRow == VGA_HEIGHT) {
-                termRow = 0;
+                    termRow = 0;
+                }
             }
-        }
     }
 }
 
