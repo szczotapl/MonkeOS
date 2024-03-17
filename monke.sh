@@ -10,6 +10,23 @@ build() {
     make -C src
 }
 
+pack() {
+    echo "Packing MonkeOS..."
+    build
+    if [ -f "src/monkeos.iso" ]; then
+        tar -czvf monkeos.tar.bz2 -C src monkeos.iso
+        echo "Packed MonkeOS into monkeos.tar.bz2"
+    else
+        echo "Error: monkeos.iso not found in src directory."
+        exit 1
+    fi
+    echo "Clean before next build? (y/n)"
+    read -r answer
+    if [[ $answer =~ ^[Yy]$ ]]; then
+        clean
+    fi
+}
+
 run() {
     echo "Running QEMU..."
     make -C src run
@@ -27,11 +44,14 @@ case "$1" in
     "build")
         build
         ;;
+    "pack")
+        pack
+        ;;
     "run")
         build && run
         ;;
     *)
-        echo "Usage: $0 {clean|build|run}"
+        echo "Usage: $0 {clean|build|run|pack}"
         exit 1
         ;;
 esac
