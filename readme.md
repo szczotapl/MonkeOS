@@ -6,8 +6,23 @@
 
 ![Alt text](art/ss.png)
 ![Alt text](art/69.png)
-# To Do:
-[x] Debug
-[ ] Keyboard input
-[ ] Shell
-[ ] Commands
+
+# Build:
+* Pacman (Arch Linux, Manjaro, itp.):
+```
+sudo pacman -S gcc g++
+```
+* APT (Debian, Ubuntu, itp.):
+```
+sudo apt install build-essential
+```
+* DNF (Fedora, CentOS, itp.):
+```
+sudo dnf install gcc gcc-c++
+```
+
+## To Do:
+- [x] Debug
+- [ ] Keyboard input
+- [ ] Shell
+- [ ] Commands
