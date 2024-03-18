@@ -37,7 +37,7 @@ chmod +x monke.sh
 ```
 
 ## To Do:
-- [x] Debug
-- [ ] Keyboard input
-- [ ] Shell
-- [ ] Commands
+- [x] Debug (Blackneeed)
+- [ ] Keyboard input (Blackneeed)
+- [ ] Shell (Blackneeed)
+- [ ] Commands (Blackneeed & Riviox)
