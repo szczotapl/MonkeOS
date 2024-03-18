@@ -15,7 +15,7 @@ sudo pacman -S gcc g++ qemu
 ```
 * APT (Debian, Ubuntu, itp.):
 ```
-sudo apt install build-essential qemu-system-x86
+sudo apt install build-essential qemu-system-x86 gcc-multilib
 ```
 * DNF (Fedora, CentOS, itp.):
 ```
