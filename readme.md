@@ -8,6 +8,7 @@
 ![Alt text](art/69.png)
 
 # Build:
+## Install packages:
 * Pacman (Arch Linux, Manjaro, itp.):
 ```
 sudo pacman -S gcc g++
@@ -19,6 +20,20 @@ sudo apt install build-essential
 * DNF (Fedora, CentOS, itp.):
 ```
 sudo dnf install gcc gcc-c++
+```
+## Clone repo:
+```
+git clone https://github.com/riviox/MonkeOS.git
+cd MonkeOS
+```
+## Run `monke.sh`
+```
+chmod +x monke.sh
+./monke.sh build
+```
+## Start OS in QEMU:
+```
+./monke.sh run
 ```
 
 ## To Do:
