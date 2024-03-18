@@ -11,15 +11,15 @@
 ## Install packages:
 * Pacman (Arch Linux, Manjaro, itp.):
 ```
-sudo pacman -S gcc g++
+sudo pacman -S gcc g++ qemu
 ```
 * APT (Debian, Ubuntu, itp.):
 ```
-sudo apt install build-essential
+sudo apt install build-essential qemu-system-x86
 ```
 * DNF (Fedora, CentOS, itp.):
 ```
-sudo dnf install gcc gcc-c++
+sudo dnf install gcc gcc-c++ qemu-system-x86
 ```
 ## Clone repo:
 ```
