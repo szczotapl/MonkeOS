@@ -1,4 +1,4 @@
-# <img src="art/monkeos.png" alt="drawing" width="50"/> MonkeOS 
+# <img src="art/monkeos.png" alt="drawing" width="50"/> MonkeOS - Experimental branch. (uses Limine instead of grub)
 ![repo size](https://img.shields.io/github/repo-size/riviox/MonkeOS)
 ![top language](https://img.shields.io/github/languages/top/riviox/MonkeOS)
 ## an attempt to create OS in C++ and ASM 
