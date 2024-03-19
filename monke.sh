@@ -54,7 +54,11 @@ case "$1" in
         pack
         ;;
     "run")
-        build && run
+        echo =============================== >> logs.log
+        date >> logs.log
+        echo =============================== >> logs.log
+        build >> logs.log && run
+        echo =============================== >> logs.log
         ;;
     *)
         echo -e "${RED}Usage: $0 {clean|build|run|pack}${NC}"
