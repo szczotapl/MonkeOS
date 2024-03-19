@@ -4,7 +4,7 @@
 ## an attempt to create OS in C++ and ASM 
 ## (Make pr) (im dumb) (help)
 
-![Alt text](art/ss.png)
+![alt text](art/screenshot.png)
 ![Alt text](art/69.png)
 
 # Build:

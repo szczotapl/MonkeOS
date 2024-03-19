@@ -1,0 +1,13 @@
+===============================
+wto, 19 mar 2024, 20:41:58 CET
+===============================
+[1;33mBuilding MonkeOS...[0m
+make: Wejście do katalogu '/home/riviox/Dokumenty/Projects/MonkeOS/MonkeOS/src'
+as -32 asm/boot.S -o boot.o
+g++ -c kernel.cpp -ffreestanding -m32 -o kernel.o -std=c++11
+mkdir -p root/boot
+cp -r grub root/boot
+gcc -ffreestanding -m32 -nostdlib -o 'root/boot/main.elf' -T linker/linker.ld boot.o kernel.o -lgcc -lc
+grub-mkrescue -o 'monkeos.iso' 'root'
+make: Opuszczenie katalogu '/home/riviox/Dokumenty/Projects/MonkeOS/MonkeOS/src'
+===============================
