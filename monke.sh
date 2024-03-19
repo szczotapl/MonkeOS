@@ -18,7 +18,11 @@ build() {
 
 pack() {
     echo -e "${YELLOW}Packing MonkeOS...${NC}"
-    build
+    echo =============================== >> logs.log
+    date >> logs.log
+    echo =============================== >> logs.log
+    build >> logs.log
+    echo =============================== >> logs.log
     if [ -f "src/monkeos.iso" ]; then
         tar -czvf monkeos.tar.bz2 -C src monkeos.iso
         echo -e "${GREEN}Packed MonkeOS into monkeos.tar.bz2${NC}"
